@@ -3,7 +3,7 @@ const IN_PROGRESS = "In progress";
 const DONE = "Done";
 const HIGH = "High";
 const LOW = "Low";
-let lastId = 3;
+let lastId = 5;
 
 
 
