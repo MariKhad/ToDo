@@ -83,12 +83,6 @@ function showBy(obj) {
 }
 
 function addTask(task, priority = LOW, status = TODO) {
-	if (status === undefined) {
-		status = TODO;
-	}
-	if (priority === undefined) {
-		priority = LOW;
-	}
 	let isTaskInList = list.find(item => item.name === task);
 	if (isTaskInList) {
 		console.log('This task already in the list')
