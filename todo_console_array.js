@@ -82,7 +82,7 @@ function showBy(obj) {
 	}
 }
 
-function addTask(task, priority, status) {
+function addTask(task, priority = LOW, status = TODO) {
 	if (status === undefined) {
 		status = TODO;
 	}
