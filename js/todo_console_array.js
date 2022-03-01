@@ -129,3 +129,17 @@ showBy('status');
 changeStatusPriority("make a bed", IN_PROGRESS)
 console.log(list);
 
+
+function buildFun(n){
+
+	var res = []
+
+	for (var i = 0; i< n; i++){
+		(function(number){
+     res.push(function(){
+			return number;
+		}))(i);
+	}
+	return res;
+}
+
