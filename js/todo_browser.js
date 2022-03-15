@@ -1,23 +1,28 @@
-import { TODO_UI } from '../js/view.js';
-//addEventListener('DOMContentLoaded', alert('DOM загружен'));
+import { TODO_UI } from './view.js';
+addEventListener('DOMContentLoaded', taskDelete);
 let BUTTONS_DEL = document.querySelectorAll('todo__btn--del');
+let INPUTS_CHECKED = document.querySelectorAll('option:checked');
 
 //const taskList = [];
 
 
 
+function taskDelete(){
 for (let button of BUTTONS_DEL) {
-	console.log('кнопка нажата')
 	button.addEventListener('click', function (event) {
+		console.log('кнопка нажата');
 		const targetTask = event.target;
 		taskName = targetTask.previousSibling.textContent;
 		//taskList = taskList.filter(item => item !== taskName);
-		targetTask.parentNode.remove();
-		BUTTONS_DEL = document.querySelectorAll('todo__btn--del')
+		targetTask.parentElement.remove();
+		BUTTONS_DEL = document.querySelectorAll('todo__btn--del');
+		INPUTS_CHECKED = document.querySelectorAll('option:checked');
 	})
 }
+}
 
-for (let box of TODO_UI.INPUTS_CHECKED) {
+for (let box of INPUTS_CHECKED) {
 	box.parentNode.style.backgroundColor = "grey";
 	box.style.textDecoration = "overline";
+	INPUTS_CHECKED = document.querySelectorAll('option:checked');
 }
