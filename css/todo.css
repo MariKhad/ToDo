@@ -118,3 +118,7 @@ button {
 	background: center / contain no-repeat url("../img/add-icon.png");
 	right: 22px;
 }	
+
+p {
+	display: inline;
+}

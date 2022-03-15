@@ -1,8 +1,8 @@
 export const TODO_UI = {
-	HIDE: document.querySelector('.todo__priority--high'),
+	HIGH: document.querySelector('.todo__priority--high'),
 	LOW: document.querySelector('.todo__priority--low'),
 	//BUTTONS_DEL: document.querySelectorAll('.todo__btn--del'),
-   BUTTONS_ADD: document.querySelectorAll('.todo__btn--add'),
+   FORMS_ADD: document.querySelectorAll('form'),
 	FORM_HIGH: document.querySelector('.high'),
 	FORM_LOW: document.querySelector('.low'),
 	CHECKBOXES: document.querySelectorAll('.box'),
