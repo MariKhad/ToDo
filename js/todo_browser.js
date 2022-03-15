@@ -1,11 +1,13 @@
 import { TODO_UI } from './view.js';
+
 let BUTTONS_DEL = document.querySelectorAll('.todo__btn--del');
 let CHECKBOXES = document.querySelectorAll('.box');
 let taskList = [];
+
 getExistedTasks();
-taskDelete();
 allTasksAdd();
 checkedStyle();
+taskDelete();
 
 
 function getExistedTasks() {
@@ -36,19 +38,22 @@ function taskDelete() {
 			CHECKBOXES = document.querySelectorAll('.box');
 		})
 	}
+	return CHECKBOXES, BUTTONS_DEL;
 }
 
 function checkedStyle() {
 	for (let box of CHECKBOXES) {
 		box.addEventListener('change', function () {
-			if (box.checked === true){
-				box.parent.Element.classList.add('done')
+			if (box.checked === true) {
+				box.parentElement.classList.add('done')
 			} else {
-				box.parent.Element.classList.remove('done')
+				box.parentElement.classList.remove('done')
 			}
-
 		});
+		CHECKBOXES = document.querySelectorAll('.box');
+		BUTTONS_DEL = document.querySelectorAll('.todo__btn--del');
 	}
+	return CHECKBOXES, BUTTONS_DEL;
 }
 function allTasksAdd() {
 	for (let form of TODO_UI.FORMS_ADD) {
@@ -90,5 +95,9 @@ function taskAdd(prior) {
 	} else {
 		TODO_UI.LOW.append(div);
 	}
-	return taskList;
+	CHECKBOXES = document.querySelectorAll('.box');
+	BUTTONS_DEL = document.querySelectorAll('.todo__btn--del');
+	checkedStyle();
+	taskDelete();
+	return taskList, CHECKBOXES, BUTTONS_DEL;
 }

@@ -73,7 +73,6 @@ main {
 	background-color: inherit;
 	border: 1px solid #989898;
 	border-radius: 6px;
-	display: block;
 	padding: 12px;
 	font: inherit;
 }
@@ -122,13 +121,19 @@ button {
 .todo__btn--add{
 	background: center / contain no-repeat url("../img/add-icon.png");
 	right: 22px;
+	top: 15px
 }	
 
 p {
 	display: inline;
+	margin: 5px;
 }
 
 .done {
 background-color: grey;
-text-decoration: overline;
 }
+
+.done > p {
+	text-decoration: line-through;
+}
+
