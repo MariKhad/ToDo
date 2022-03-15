@@ -122,3 +122,8 @@ button {
 p {
 	display: inline;
 }
+
+.done {
+background-color: grey;
+text-decoration: overline;
+}
