@@ -90,6 +90,11 @@ main {
 	font: inherit;
 	border-radius: 6px;
 	position: relative;
+	text-decoration: none;
+}
+
+.done {
+	background-color: rgb(241, 238, 238);
 }
 
 div{

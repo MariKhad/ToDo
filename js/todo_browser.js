@@ -19,7 +19,7 @@ function getExistedTasks() {
 		}
 		taskList.push(existedTask);
 	}
-	console.log(taskList);
+	return taskList;
 }
 
 
@@ -42,11 +42,9 @@ function checkedStyle() {
 	for (let box of CHECKBOXES) {
 		box.addEventListener('change', function () {
 			if (box.checked === true){
-				box.parentNode.style.backgroundColor = "grey";
-				box.style.textDecoration = "overline";
+				box.parent.Element.classList.add('done')
 			} else {
-				box.parentNode.style.backgroundColor = "inherit";
-				box.style.textDecoration = "inherit";
+				box.parent.Element.classList.remove('done')
 			}
 
 		});
@@ -72,7 +70,7 @@ function taskAdd(prior) {
 	newTask.name = targetForm.firstElementChild.value;
 	targetForm.firstElementChild.value = "";
 	newTask.priority = prior;
-	taskList = taskList.push(newTask);
+	taskList.push(newTask);
 	let div = document.createElement('div');
 	div.classList.add("task");
 	let input = document.createElement('input');
@@ -92,4 +90,5 @@ function taskAdd(prior) {
 	} else {
 		TODO_UI.LOW.append(div);
 	}
+	return taskList;
 }
